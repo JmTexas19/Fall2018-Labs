@@ -67,7 +67,7 @@ for i in range(0,8,1):
             matrixMO[i][j] += matrixM[i][k] * matrixO[k][j]
 
 print "Matrix MO:\n", matrixMO, "\n"
-        
+
 matrixD = [
         [24, 48, 72, 96, 120, 144, 168, 192, 0],
         [24, 48, 72, 96, 120, 144, 168, 192, 0],
@@ -88,4 +88,4 @@ for i in range(0,8,1):
                 minimum = matrixD[i][j]
             matrixD[k][8] = minimum
  
-print "Matrix D:\n", matrixD, "\n"       
+print "Matrix D:\n", matrixD, "\n"
