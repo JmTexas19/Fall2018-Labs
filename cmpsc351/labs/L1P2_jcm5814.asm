@@ -17,4 +17,5 @@ loop:				#Loop 5 times when jump to loop
 	addu	$t1, $t1, 10
 	addu	$t2, $t2, 1
 	blt	$t2, 5, loop	#If $t2 is less than $t1, Loop 
-	jr	$ra
+	li	$t2, 0		#Reset counter
+	jr	$ra		#Go back to line where jump was called using $ra which was set in jal
