@@ -11,8 +11,8 @@
    	li 	$v0, 10		#System call for exit
 	syscall			#Cleanly end system
 	
-#Loop 5 times when jump to loop
-loop:
+
+loop:				#Loop 5 times when jump to loop
 	addu	$t0, $t0, $t1	#Add $t1 to $t0
 	addu	$t1, $t1, 10
 	addu	$t2, $t2, 1
