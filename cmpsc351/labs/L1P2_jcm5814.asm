@@ -10,12 +10,11 @@
 	
    	li 	$v0, 10		#System call for exit
 	syscall			#Cleanly end system
-	
 
 loop:				#Loop 5 times when jump to loop
 	addu	$t0, $t0, $t1	#Add $t1 to $t0
-	addu	$t1, $t1, 10
-	addu	$t2, $t2, 1
+	addu	$t1, $t1, 10	#Add 10 to $t1
+	addu	$t2, $t2, 1	#Add 1 to counter
 	blt	$t2, 5, loop	#If $t2 is less than $t1, Loop 
 	li	$t2, 0		#Reset counter
 	jr	$ra		#Go back to line where jump was called using $ra which was set in jal
