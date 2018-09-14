@@ -3,8 +3,8 @@
 #9/13/2018
 
 .data
-	dec1:		.double 0.0
-	dec2:		.double 0.0	
+	dec1:		.word 0
+	dec2:		.word 0	
 	promptString1:	.asciiz "Enter decimal 1:\n"
 	promptString2:	.asciiz "Enter decimal 2:\n"
 
@@ -17,7 +17,7 @@
 	#INPUT1 INTO dec1
 	li	$v0, 6			#Load syscall read float
 	syscall				#Execute
-	swc1 	$f0, dec1		#Copy input into dec1
+	sw 	$t0, dec1		#Copy input into dec1
 	
 	#PRINT PROMPT 2
 	li	$v0, 4			#Load syscall print string
@@ -27,7 +27,7 @@
 	#INPUT1 INTO dec2
 	li	$v0, 6			#Load syscall read float
 	syscall				#Execute
-	swc1 	$f0, dec2		#Copy input into dec2
+	sw	$t0, dec2		#Copy input into dec2
 	
 	
 	
