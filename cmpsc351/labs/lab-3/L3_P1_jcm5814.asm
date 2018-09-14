@@ -35,8 +35,8 @@
 	lw	$t1, dec2
 	
 	#JUMPS
-	jal	loop
-	jal	print
+	jal	loop			#Jump and link to loop function
+	jal	print			#Jump and link to print function
 
 #CHECK BIT
 loop:
@@ -50,12 +50,13 @@ clearBit:
 	srl	$t1, $t1, 1		#Shift dec2 right one bit to check next bit
 	bnez	$t1, loop		#If dec2 is not equal to zero, loop again, otherwise done
 	sw	$t3, result		#Store result into label
-	jr	$ra
+	jr	$ra			#Return to link
 
 #PRINT RESULT
 print:
-	li $v0, 1			#Load print integer syscall
-	lw $a0, result			#Load address of integer to print
+	li 	$v0, 1			#Load print integer syscall
+	lw 	$a0, result		#Load address of integer to print
 	syscall				#Execute
+	jr 	$ra			#Return to link
 
 	
