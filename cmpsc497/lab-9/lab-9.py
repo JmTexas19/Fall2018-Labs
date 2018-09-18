@@ -5,7 +5,6 @@ Julian Marin
 Lab 9
 """
 
-
 # Load libraries
 import pandas
 from pandas.tools.plotting import scatter_matrix
