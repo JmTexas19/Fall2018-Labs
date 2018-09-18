@@ -59,4 +59,7 @@ print:
 	syscall				#Execute
 	jr 	$ra			#Return to link
 
+
+#WRITE TO FILE
+writeToFile:
 	
