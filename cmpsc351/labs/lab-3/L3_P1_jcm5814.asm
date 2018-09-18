@@ -37,6 +37,11 @@
 	#JUMPS
 	jal	loop			#Jump and link to loop function
 	jal	print			#Jump and link to print function
+	jal	writeToFile		#Jump and link to WriteToFile function
+	
+	#EXIT
+	li	$v0, 10			#Load exit syscall
+	syscall				#Execute
 
 #CHECK BIT
 loop:
@@ -54,12 +59,13 @@ clearBit:
 
 #PRINT RESULT
 print:
-	li 	$v0, 1			#Load print integer syscall
-	lw 	$a0, result		#Load address of integer to print
+	li 	$v0, 35			#Load print integer to 32bit binary syscall
+	lw 	$a0, result		#Load word of integer to print
 	syscall				#Execute
 	jr 	$ra			#Return to link
 
 
 #WRITE TO FILE
 writeToFile:
-	
+	li	$v0, 15			#Load write to file syscall
+	la	$a1, result
